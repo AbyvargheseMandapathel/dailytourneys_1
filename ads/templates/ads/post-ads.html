@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<form id="ad-post-form" method="post" action="">
+  {% if request.user.is_authenticated %}
+  {% csrf_token %}
+    <div class="grid gap-6 mb-6 md:grid-cols-2">
+        <div>
+            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Event name</label>
+            <input type="text" id="title" name="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Event Name" required="">
+        </div>
+        <div>
+            <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Prize</label>
+            <input type="text" id="prize" name="prize" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Prize Pool" required="">
+        </div>
+        <div>
+            <label for="company" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Event Description</label>
+<textarea id="description" name="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your message..."></textarea>
+
+        </div>
+      <div>
+            <label for="entry_type" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Entry Type</label>
+            <select id="entry" name="entry" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+<option selected>Choose Entry type</option>
+  <option value="Free">Free Entry</option>
+  <option value="Paid">Paid</option>
+</select>
+        </div>
+      <div>
+      <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Category</label>
+            <select id="category" name="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+  <option value="bgmi"  selected>BGMI</option>
+  <option value="Free Fire">Free Fire</option>
+  <option value="Others">Others</option>
+</select>
+        </div>
+      <div>
+            <label for="no_of_slots" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">No Of Slots</label>
+            <input type="text" id="no_of_slots" name="no_of_slots" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="No Of Slots" required="">
+        </div>
+        <div>
+            <label for="img_link" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Event Poster</label>
+            <input type="text" id="img_link" name="img_link" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your Event Poster Url" required="">
+        </div>
+        <div>
+<label for="registeration_url" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Registeration Url</label>
+<div class="flex">
+  <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 rounded-l-md border border-r-0 border-gray-300 dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
+    https://
+  </span>
+  <input type="text" id="registeration_url" name= "registeration_url" class="rounded-none rounded-r-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Registeration Url">
+</div>
+          <!-- <div>
+            <label for="tags" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Tags</label>
+            <input type="text" id="tags" name="tags" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="tags" required="">
+        </div>-->
+    <div class="flex items-start mb-6">
+        <div class="flex items-center h-5">
+        <input id="remember" type="checkbox" value="" class="w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800" required="">
+        </div>
+        <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-400">I agree with the <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a>.</label>
+    </div>
+    <button type="submit" id="saveBtn" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit Event</button>
+{% endif %}
+        </form>
+        </div>
+          <script>
+    var formData = new FormData();
+    $(document).on('click', '#saveBtn', function (e) {
+
+      if ($('#title').val() === "") {
+        $("#titlemsg").html("<div class='alert alert-danger'>Title can not be empty</div>");
+      }
+
+      if ($('#description').val() === "") {
+        $("#descriptionmsg").html("<div class='alert alert-danger'>Description can not be empty</div>");
+      }
+
+      if ($('#category').val() === "") {
+        $("#categorymsg").html("<div class='alert alert-danger'>Category can not be empty</div>");
+      }
+
+      if ($('#prize').val() === "") {
+        $("#pricemsg").html("<div class='alert alert-danger'>Prize can not be empty & must be numeric</div>");
+      }
+
+      if ($('#entry').val() === "") {
+        $("#conditionmsg").html("<div class='alert alert-danger'>Entry can not be empty</div>");
+      }
+      formData.append('title', $('#title').val())
+      formData.append('description', $('#description').val())
+      formData.append('category', $('#category').val())
+      formData.append('prize', $('#prize').val())
+      formData.append('entry', $('#entry').val())
+      formData.append('video', $('#video').val())
+
+
+      formData.append('csrfmiddlewaretoken', '{{ csrf_token }}')
+
+      $.ajax({
+        type: 'POST',
+        url: '{% url "post-ads" %}',
+        data: formData,
+        cache: false,
+        processData: false,
+        contentType: false,
+        enctype: 'multipart/form-data',
+        success: function () {
+          $("#formsuccessmsg").html(
+            "<div class='p-4 mb-4 text-sm text-blue-700 bg-blue-100 rounded-lg dark:bg-blue-200 dark:text-blue-800' role='alert'>The Ad has been posted successfully and   waiting for approval by Admin.</div>"
+          );
+          // alert('The Ads has been posted successfully!')
+          $('#ad-post-form').each(function () {
+            this.reset(); //Here form fields will be cleared.
+          });
+          
+        },
+        error: function (xhr, errmsg, err) {
+          $("#formerrmsg").html(
+            "<div class='p-4 mb-4 text-sm text-blue-700 bg-blue-100 rounded-lg dark:bg-blue-200 dark:text-blue-800' role='alert'>You have one or more error. Please provide all required fields to post ad.</div>"
+          );
+          // console.log(xhr.status + ":" + xhr.responseText)
+          // alert('Failed to post. Make sure you fill all the fields')
+
+
+        }
+      })
+    })
+    console.log(formData)
+  })
+</script>
+{%endblock content %}
