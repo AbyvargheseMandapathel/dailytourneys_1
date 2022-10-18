@@ -29,7 +29,7 @@ SECRET_KEY = '+$#4m3n(oz_n#ip-3bpl5g5ew7)v$gq66rwhgz(dune&0(2!)g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['dailytourneys-1.abyvarghese2000.repl.co']
+ALLOWED_HOSTS = ['dtbackupajees.abyvarghese2000.repl.co']
 
 
 # Application definition
