@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import django_heroku
 
 import environ
 # Initialise environment variables
@@ -184,7 +185,8 @@ CKEDITOR_CONFIGS = {
     }
 }
 
-#django_heroku.settings(locals())
+#Activate heroku
+django_heroku.settings(locals())
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  
 # MAILER_EMAIL_BACKEND = EMAIL_BACKEND
