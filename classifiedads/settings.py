@@ -93,23 +93,23 @@ WSGI_APPLICATION = 'classifiedads.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 """PostgreSQL DB"""
-# DATABASES = {
-#     'default': {
-#         'NAME': 'ClassifiedAdsDB',
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'USER': 'postgres',
-#         'PASSWORD': 'admin123',
-#         'HOST': 'localhost',
-#     }
-# }
+DATABASES = {
+     'default': {
+         'NAME': 'd6hpgn0gplq0io',
+         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+         'USER': 'viqtuozglaqces',
+         'PASSWORD': '41cfef1eac754b22effd270fb8c021d06d752d50dec0f8a1074bbfd612d14eaf',
+         'HOST': 'ec2-44-210-228-110.compute-1.amazonaws.com',
+     }
+ }
 
 """SQLite DB"""
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+#DATABASES = {
+#    'default': {
+#       'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#    }
+#}
 
 
 
