@@ -185,8 +185,6 @@ CKEDITOR_CONFIGS = {
     }
 }
 
-#Activate heroku
-django_heroku.settings(locals())
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  
 # MAILER_EMAIL_BACKEND = EMAIL_BACKEND
@@ -203,3 +201,5 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
+#Activate heroku
+django_heroku.settings(locals())
