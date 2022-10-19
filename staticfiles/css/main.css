@@ -223,7 +223,7 @@ ul li, ol li {
 }
 
 .btn-common {
-  background-color: #89613A;
+  background-color: lightblue;
   position: relative;
   color: #fff;
   z-index: 1;
@@ -5157,6 +5157,7 @@ ul.errorlist li, .error-text{
 
 .section-padding {
   padding: 115px 0;
+  background-color:#000000;
 }
 
 .focus-keyword{
