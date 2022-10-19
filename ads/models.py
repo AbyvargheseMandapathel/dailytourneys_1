@@ -30,7 +30,7 @@ class Ads(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE, null=True)
     title = models.CharField(max_length=200)
     description = RichTextField()
-    prize = models.DecimalField(max_digits=8, decimal_places=2)
+    prize = models.CharField(max_length=200)
     date_created = models.DateTimeField(auto_now_add=True)
     category = models.ForeignKey('Category', on_delete=models.CASCADE, null=True) 
     entry = models.CharField(max_length=100, choices=CONDITION)
