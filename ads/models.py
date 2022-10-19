@@ -45,7 +45,7 @@ class Ads(models.Model):
     class Meta:
         verbose_name_plural = "Classified Ads"
 
-    def _str_(self):
+    def __str__(self):
         return self.title
 
     def get_absolute_url(self):
@@ -66,7 +66,7 @@ class Category(models.Model):
     class Meta:
         verbose_name_plural = "Categories"
 
-    def _str_(self):
+    def __str__(self):
         return self.category_name
 
 # Image Model
@@ -74,7 +74,7 @@ class AdsImages(models.Model):
     ads = models.ForeignKey(Ads, on_delete=models.CASCADE)
     #image = models.ImageField(upload_to='uploads/%Y/%m/%d', default=None)
 
-    def _str_(self):
+    def __str__(self):
         return self.ads.title
 
     class Meta:
@@ -87,7 +87,7 @@ class AdsTopBanner(models.Model):
     #image = models.ImageField(upload_to='banners/%Y/%m/%d', default=None)
     url = models.CharField(max_length=200, default="Enter the Url", blank=True)
 
-    def _str_(self):
+    def __str__(self):
         return self.title
 
 # Right Banner Model
@@ -95,7 +95,7 @@ class AdsRightBanner(models.Model):
     title = models.CharField(max_length=200, default="Place Your Ad", blank=True)
     image = models.ImageField(upload_to='banners/%Y/%m/%d', default=None)
 
-    def _str_(self):
+    def __str__(self):
         return self.title
 
 # Bottom Banner Model
@@ -103,5 +103,5 @@ class AdsBottomBanner(models.Model):
     title = models.CharField(max_length=200, default="Place Your Ad", blank=True)
     image = models.ImageField(upload_to='banners/%Y/%m/%d', default=None)
 
-    def _str_(self):
+    def __str__(self):
         return self.title
