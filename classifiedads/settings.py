@@ -55,7 +55,8 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'embed_video',
     'phonenumber_field',
-    'phonenumbers'
+    'phonenumbers',
+    'whitenoise.runserver_nostatic'
 ]
 
 MIDDLEWARE = [
