@@ -205,4 +205,4 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 #Activate heroku
-django_heroku.settings(locals())
+django_heroku.settings(locals(), staticfiles=False)
