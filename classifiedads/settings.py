@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+
 import environ
 # Initialise environment variables
 env = environ.Env()
@@ -29,7 +30,7 @@ SECRET_KEY = '+$#4m3n(oz_n#ip-3bpl5g5ew7)v$gq66rwhgz(dune&0(2!)g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['dtbackupajees.abyvarghese2000.repl.co']
+ALLOWED_HOSTS = ['*','localhost']
 
 
 # Application definition
@@ -98,6 +99,7 @@ DATABASES = {
          'NAME': 'd6hpgn0gplq0io',
          'ENGINE': 'django.db.backends.postgresql_psycopg2',
          'USER': 'viqtuozglaqces',
+         'PORT': '5432',
          'PASSWORD': '41cfef1eac754b22effd270fb8c021d06d752d50dec0f8a1074bbfd612d14eaf',
          'HOST': 'ec2-44-210-228-110.compute-1.amazonaws.com',
      }
