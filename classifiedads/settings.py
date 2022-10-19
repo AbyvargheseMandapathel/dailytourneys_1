@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import django_heroku
 
 import environ
 # Initialise environment variables
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     # My apps
     'pages',
@@ -60,6 +62,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -96,19 +99,19 @@ WSGI_APPLICATION = 'classifiedads.wsgi.application'
 """PostgreSQL DB"""
 DATABASES = {
      'default': {
-         'NAME': 'd6hpgn0gplq0io',
+         'NAME': env('DB_NAME'),
          'ENGINE': 'django.db.backends.postgresql_psycopg2',
-         'USER': 'viqtuozglaqces',
+         'USER': env('DB_USER'),
          'PORT': '5432',
-         'PASSWORD': '41cfef1eac754b22effd270fb8c021d06d752d50dec0f8a1074bbfd612d14eaf',
-         'HOST': 'ec2-44-210-228-110.compute-1.amazonaws.com',
+         'PASSWORD': env('DB_PASS'), 
+         'HOST': env('DB_HOST'), 
      }
  }
 
 """SQLite DB"""
 #DATABASES = {
 #    'default': {
-#       'ENGINE': 'django.db.backends.sqlite3',
+#      'ENGINE': 'django.db.backends.sqlite3',
 #        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #    }
 #}
@@ -152,10 +155,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 # Path to find static assets.
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 # Location of project wide static assets.
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 # Location that holds user-uploaded files.
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
@@ -184,7 +188,6 @@ CKEDITOR_CONFIGS = {
     }
 }
 
-#django_heroku.settings(locals())
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  
 # MAILER_EMAIL_BACKEND = EMAIL_BACKEND
@@ -201,3 +204,5 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
+#Activate heroku
+django_heroku.settings(locals())
