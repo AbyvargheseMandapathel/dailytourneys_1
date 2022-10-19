@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-import django_heroku
+#import django_heroku
 
 import environ
 # Initialise environment variables
@@ -95,24 +95,24 @@ WSGI_APPLICATION = 'classifiedads.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 """PostgreSQL DB"""
-DATABASES = {
-     'default': {
-         'NAME': env('DB_NAME'),
-         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-         'USER': env('DB_USER'),
-         'PORT': '5432',
-         'PASSWORD': env('DB_PASS'), 
-         'HOST': env('DB_HOST'), 
-     }
- }
+#DATABASES = {
+#     'default': {
+#         'NAME': env('DB_NAME'),
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'USER': env('DB_USER'),
+#         'PORT': '5432',
+#         'PASSWORD': env('DB_PASS'), 
+#         'HOST': env('DB_HOST'), 
+#     }
+# }
 
 """SQLite DB"""
-#DATABASES = {
-#    'default': {
-#       'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#    }
-#}
+DATABASES = {
+    'default': {
+       'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 
 
@@ -202,4 +202,4 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 #Activate heroku
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
